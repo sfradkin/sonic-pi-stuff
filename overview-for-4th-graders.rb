@@ -17,9 +17,7 @@ end
 comment do
 live_loop :amen do
   sample :loop_amen, rate: 1
-  #sleep 3.5 #for rate of 0.5
-  sleep 1.75 #for rate of 1
-  #sleep 0.875 # for rate of 2
+  sleep sample_duration :loop_amen, rate: 1
 end
 end
 
