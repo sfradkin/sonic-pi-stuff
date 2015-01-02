@@ -15,6 +15,20 @@ comment do
 end
 
 comment do
+live_loop :chords do
+  play chord :c4, :major
+  sleep 1
+end
+end
+
+comment do
+live_loop :choose_chord do
+  play choose(chord :b3, :major7)
+  sleep 1
+end
+end
+
+comment do
 live_loop :amen do
   sample :loop_amen, rate: 1
   sleep sample_duration :loop_amen, rate: 1
