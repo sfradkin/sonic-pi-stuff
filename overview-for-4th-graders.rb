@@ -1,9 +1,112 @@
 # Welcome to Sonic Pi v2.0
 
+# Play random notes by midi number
+# sleep for any number of seconds or fractions of seconds
+play 60
+sleep 1
+play 50
+sleep 5
+
+# Play notes by actual note name and octave number
+# Here's Twinkle Twinkle Little Star
+play :c4
+sleep 0.5
+play :c4
+sleep 0.5
+play :g4
+sleep 0.5
+play :g4
+sleep 0.5
+play :a4
+sleep 0.5
+play :a4
+sleep 0.5
+play :g4
+sleep 0.75
+play :f4
+sleep 0.5
+play :f4
+sleep 0.5
+play :e4
+sleep 0.5
+play :e4
+sleep 0.5
+play :d4
+sleep 0.5
+play :d4
+sleep 0.5
+play :c4
+sleep 0.75
+play :g4
+sleep 0.5
+play :g4
+sleep 0.5
+play :f4
+sleep 0.5
+play :f4
+sleep 0.5
+play :e4
+sleep 0.5
+play :e4
+sleep 0.5
+play :d4
+sleep 0.75
+play :g4
+sleep 0.5
+play :g4
+sleep 0.5
+play :f4
+sleep 0.5
+play :f4
+sleep 0.5
+play :e4
+sleep 0.5
+play :e4
+sleep 0.5
+play :d4
+sleep 0.75
+play :c4
+sleep 0.5
+play :c4
+sleep 0.5
+play :g4
+sleep 0.5
+play :g4
+sleep 0.5
+play :a4
+sleep 0.5
+play :a4
+sleep 0.5
+play :g4
+sleep 0.75
+play :f4
+sleep 0.5
+play :f4
+sleep 0.5
+play :e4
+sleep 0.5
+play :e4
+sleep 0.5
+play :d4
+sleep 0.5
+play :d4
+sleep 0.5
+play :c4
+
+
+
 comment do
+
+  # loop N times just by choosing a number and adding .times and a block
   2.times do
+    
+    # add a block with a specific synth
     with_synth :tb303 do
+    
+      # let's randomly change the cutoff each time through the loop
       use_synth_defaults cutoff: rrand(50, 120)
+      
+      # add some fx... how about echo
       with_fx :echo do
         play 60
         sleep 1
