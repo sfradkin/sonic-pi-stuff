@@ -118,7 +118,9 @@ comment do
 end
 
 comment do
+# we can use live_loop to create a changeable, infinite loop
 live_loop :chords do
+  # play a chord using play chord, tell it a note to center it on and major/minor/etc
   play chord :c4, :major
   sleep 1
 end
@@ -126,6 +128,7 @@ end
 
 comment do
 live_loop :choose_chord do
+  # use choose function to randomly pick one of the notes from a chord
   play choose(chord :b3, :major7)
   sleep 1
 end
@@ -133,14 +136,17 @@ end
 
 comment do
 live_loop :amen do
+  # there are a number of built-in samples (or you can tell it to load your own)
+  # change the rate for some fun
   sample :loop_amen, rate: 1
   sleep sample_duration :loop_amen, rate: 1
 end
 end
 
 comment do
-#4.times do
+# the standard 4/4 house beat
 live_loop :bass_beat do
+  # use sync to sync up multiple live_loops
   sync :syncer
   sample :drum_bass_hard
   sleep 1
@@ -154,6 +160,7 @@ end
 end
 
 comment do
+# add in some snares
 live_loop :snare_beat do
   sync :syncer
   sleep 0.5
@@ -168,6 +175,7 @@ end
 end
 
 comment do
+# sync loop... just sleeps for 4 seconds, but sends out a signal the other live_loops sync up with
 live_loop :syncer do
   sleep 4
 end
